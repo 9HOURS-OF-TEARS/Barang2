@@ -9,10 +9,22 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Barang">
+        android:theme="@style/Theme.Barang"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".view.activity.CreatePostActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.activity.ReNickNameActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.activity.ReContentActivity"
+            android:exported="true" />
         <activity
             android:name=".view.activity.RegisterActivity"
             android:exported="true" />

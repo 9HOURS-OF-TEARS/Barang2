@@ -1,13 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.fragment.PopularPostFragment">
+    android:layout_height="match_parent">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:id="@+id/p_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/today"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/tab_term_back"
+                android:backgroundTint="@color/toolbar_color"
+                android:text="오늘"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/week"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/tab_term_back"
+                android:text="이번 주" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/monday"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/tab_term_back"
+                android:text="이번 달" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/year"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/tab_term_back"
+                android:text="이번 해" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recently_post_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/p_linear"
+            android:paddingTop="20dp"
+            tools:listitem="@layout/recently_item" />
+
+        <LinearLayout
+            android:id="@+id/not_found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/find" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskrbold"
+                android:includeFontPadding="false"
+                android:text="등록된 게시물이 없습니다"
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
 </FrameLayout>

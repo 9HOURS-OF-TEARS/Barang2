@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="recontentActivity"
+            type="org.gsm.software.barang.view.activity.ReContentActivity" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".view.activity.ReContentActivity">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/main_header"
+            app:menu="@menu/main_menu" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.activity.ReContentActivity">
+
+            <LinearLayout
+                android:id="@+id/firsrt_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ADBAFB"
+                    android:theme="@style/Theme.HktProject">
+
+                    <ImageView
+                        android:id="@+id/toolbar_person"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/person" />
+
+                    <TextView
+                        android:id="@+id/toolbar_board_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="글 수정하기"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                </androidx.appcompat.widget.Toolbar>
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/re_title"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="70dp"
+                android:background="@null"
+                android:hint="  제목을 입력해주세요"
+                android:maxLength="20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/chkGroup"
+                cb_color="@color/black"
+                cb_pressed_ring_width="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="270dp"
+                android:layout_marginTop="55dp"
+                android:button="@drawable/bg_round_checkbox_button"
+                android:focusable="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/recontent_nick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="58dp"
+                android:fontFamily="@font/notosanskrbold"
+                android:text="익명"
+                android:textColor="#6D6D6D"
+                app:layout_constraintStart_toStartOf="@id/chkGroup"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="65dp"
+                android:background="@drawable/send"
+                app:layout_constraintStart_toStartOf="@id/recontent_nick"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/retitlecover"
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/titledown"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/re_title" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:hint="  내용을 입력해주세요"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/retitlecover" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

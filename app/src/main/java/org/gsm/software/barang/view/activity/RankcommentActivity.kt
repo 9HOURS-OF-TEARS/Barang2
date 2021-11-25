@@ -1,5 +1,6 @@
 package org.gsm.software.barang.view.activity
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -64,7 +65,15 @@ class RankcommentActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        TODO("Not yet implemented")
+        when(item.itemId){
+          R.id.rangking -> {
+              startActivity(Intent(this,RankcommentActivity::class.java))
+          }
+          R.id.my_page ->{
+              startActivity(Intent(this,MyPageActivity::class.java))
+          }
+        }
+        return false
     }
 
     //메뉴 버튼
