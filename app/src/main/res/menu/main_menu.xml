@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/my_page"
+            android:title="마이페이지"
+            app:showAsAction="collapseActionView" />
+        <item
+            android:id="@+id/board"
+            android:title="게시판"
+            app:showAsAction="collapseActionView" />
+        <item
+            android:id="@+id/rangking"
+            android:title="랭킹"
+            app:showAsAction="collapseActionView" />
+        <item
+            android:id="@+id/question"
+            android:title="문의하기"
+            app:showAsAction="collapseActionView" />
+        <item
+            android:id="@+id/b1"
+            android:title=""
+            app:showAsAction="collapseActionView"
+            />
+        <item
+            android:id="@+id/b2"
+            android:title=""
+            app:showAsAction="collapseActionView"
+            />
+
+        <item
+            android:id="@+id/b3"
+            android:title=""
+            app:showAsAction="collapseActionView"
+            />
+
+        <item
+            android:id="@+id/b4"
+            android:title=""
+            app:showAsAction="collapseActionView"
+            />
+
+        <item
+            android:id="@+id/b5"
+            android:title=""
+            app:showAsAction="collapseActionView"
+            />
+
+        <item
+            android:id="@+id/logout"
+            android:title="로그아웃"
+            app:showAsAction="collapseActionView"
+            />
+        <item
+            android:id="@+id/delete_user"
+            android:title="회원퇄퇴"
+            app:showAsAction="collapseActionView"
+            />
+
+
+
+    </group>
+</menu>

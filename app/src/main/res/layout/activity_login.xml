@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="org.gsm.software.barang.view.activity.LoginActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.LoginActivity">
+
+        <TextView
+            android:id="@+id/pname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/black"
+            android:text="바랭"
+            android:textColor="@color/sign_text_color"
+            android:textSize="60sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/compliment"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/pname"
+            android:layout_marginTop="95dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/complimentText"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="바른 랭킹\n : 바르고 고운 말로 소통해요 "
+            android:fontFamily="@font/black"
+            android:textSize="16sp"
+            android:layout_marginStart="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pname"
+            android:textColor="@color/sign_text_color"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@id/login_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pname">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="이메일을 입력해주세요"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="비밀번호를 입력해주세요"
+                android:inputType="textPassword"
+                android:maxLength="12" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signin_btn"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/sign_btn_background"
+            android:fontFamily="@font/notosanskrbold"
+            android:text="Log in"
+            android:onClick="@{()->activity.login()}"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_password" />
+
+        <TextView
+            android:id="@+id/not_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="회원이 아니신가요?"
+            android:onClick="@{()->activity.goSignup()}"
+            android:textColor="#8DA0E5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signin_btn" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

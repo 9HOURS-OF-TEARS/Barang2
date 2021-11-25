@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="org.gsm.software.barang.view.activity.RegisterActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.RegisterActivity">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/black"
+            android:text="바랭"
+            android:textColor="@color/sign_text_color"
+            android:textSize="60sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/complimentText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/compliment"
+            app:layout_constraintLeft_toRightOf="@id/title"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:fontFamily="@font/black"
+            android:text="바른 랭킹\n : 바르고 고운 말로 소통해요 "
+            android:textColor="@color/sign_text_color"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_nickname_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="70dp"
+            android:hint="닉네임을 입력하세요."
+            app:counterEnabled="true"
+            app:counterMaxLength="8"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/sameNick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:passwordToggleEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_nickname"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:maxLength="8"
+                android:textColor="#B47DC7"
+                android:textColorHint="#C4C4C4" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sameNick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="중복 확인"
+            android:onClick="@{()->activity.nameCheck()}"
+            app:layout_constraintStart_toEndOf="@+id/signup_nickname_ly"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_email_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="65dp"
+            android:hint="이메일을 입력하세요."
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/sameNick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_nickname_ly">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_email"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:inputType="textEmailAddress"
+                android:maxLength="20"
+                android:textColor="#B47DC7"
+                android:textColorHint="#C4C4C4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sameId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="58dp"
+            android:text="중복 확인"
+            android:onClick="@{()->activity.idCheck()}"
+            app:layout_constraintStart_toEndOf="@+id/signup_email_ly"
+            app:layout_constraintTop_toBottomOf="@id/sameNick" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_pw_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="비밀번호를 입력하세요."
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_email_ly"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_pw"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:inputType="textPassword"
+                android:maxLength="14"
+                android:textColor="#B47DC7"
+                android:textColorHint="#C4C4C4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signup_btn"
+            android:layout_width="264dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/sign_btn_background"
+            android:onClick="@{()->activity.signup()}"
+            android:text="Sign up"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_pw_ly" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원이신가요?"
+            android:onClick="@{()->activity.goLogin()}"
+            app:layout_constraintTop_toBottomOf="@id/signup_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
